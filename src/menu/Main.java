@@ -18,7 +18,8 @@ public class Main {
         Map<Integer, Accion> strategy = AccionHandler.getStrategy();
 
 
-        Integer opcion = null;
+          Integer opcion = null;
+
         do {
             System.out.println("""
                 
@@ -33,6 +34,7 @@ public class Main {
                 """);
 
             try {
+
                 opcion = Integer.parseInt(scanner.nextLine());
                 Accion accion = strategy.get(opcion);
                 if (accion == null) {
@@ -44,7 +46,9 @@ public class Main {
                 }else {
                     accion.aplicar();
                 }
-            } catch (NumberFormatException e) {
+
+            } catch (Exception e) {
+                opcion = 1000;
                 System.out.println("""
                  ---------------------
                  X Opción no valida X

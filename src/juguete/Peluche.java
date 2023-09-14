@@ -1,34 +1,38 @@
 package src.juguete;
 
 public class Peluche implements Juguete {
-
+    private long id;
     private String materialExterior;
     private String relleno;
     private String color;
-    private long id;
 
-    public Peluche(String materialExterior, String relleno, String color, long id) {
+
+    public Peluche(long id, String materialExterior, String relleno, String color) {
+        this.id = id;
         this.materialExterior = materialExterior;
         this.relleno = relleno;
         this.color = color;
-        this.id = id;
+
     }
 
-    public Peluche(Juguete peluche) {
-        this.materialExterior = materialExterior;
-        this.relleno = relleno;
-        this.color = color;
-        this.id = id;
-    }
+    public Peluche(Peluche peluche) {
+        this.id = peluche.id;
+        this.materialExterior = peluche.materialExterior;
+        this.relleno = peluche.relleno;
+        this.color = peluche.color;
 
+    }
+    public Peluche clone() {
+        return new Peluche(this);
+    }
 
     @Override
     public String toString() {
-        return "Peluche{" +
-                "materialExterior='" + materialExterior + '\'' +
-                ", relleno='" + relleno + '\'' +
-                ", color='" + color + '\'' +
-                ", id=" + id +
+        return "PELUCHE{" +
+                "| ID=" + id +
+                "| MATERIAL EXTERIOR='" + materialExterior + '\'' +
+                "| RELLENO='" + relleno + '\'' +
+                "| COLOR='" + color + '\'' +
                 '}';
     }
 
@@ -52,15 +56,18 @@ public class Peluche implements Juguete {
         this.id = i;
     }
 
-    public Peluche clone() {
-        return new Peluche(this);
-    }
+
 
     public static class PelucheBuilder {
+        private long id;
         private String materialExterior;
         private String relleno;
         private String color;
-        private long id;
+
+        public PelucheBuilder id (long id){
+            this.id = id;
+            return this;
+        }
 
         public PelucheBuilder materialExterior (String materialExterior){
             this.materialExterior = materialExterior;
@@ -77,14 +84,10 @@ public class Peluche implements Juguete {
             return this;
         }
 
-        public PelucheBuilder id (long id){
-            this.id = id;
-            return this;
-        }
 
         public Peluche build (){
 
-            return new Peluche(materialExterior, relleno, color, id);
+            return new Peluche(id,materialExterior, relleno, color);
         }
 
     }

@@ -12,7 +12,6 @@ public class AccionCrear implements Accion{
     Integer op = null;
     @Override
     public void aplicar() {
-        int contador = 0;
 
         System.out.println("""
             -------------------------
@@ -32,7 +31,7 @@ public class AccionCrear implements Accion{
             } else {
                 System.out.println("Opción no valida");
             }
-        } catch (NumberFormatException e) {
+        } catch (Exception e) {
             System.out.println("""
                  ---------------------
                  X Opción no valida X

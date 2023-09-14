@@ -14,7 +14,7 @@ public class AccionClonar implements Accion{
     private static Scanner scanner = new Scanner(System.in);
     @Override
     public void aplicar() {
-        System.out.println("Ingrese el Id de Juguete que desea eliminar: ");
+        System.out.println("Ingrese el Id de Juguete que desea Clonar: ");
         int clonar= scanner.nextInt();
 
         boolean eliminado = false;
