@@ -9,7 +9,7 @@ public class AccionRegistro implements Accion{
     public void aplicar() {
 
         for (Juguete juguete: juguetes) {
-            System.out.println(juguete);
+            System.out.println(juguete.getid());
         }
 
     }

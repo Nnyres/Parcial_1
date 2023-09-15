@@ -25,7 +25,7 @@ public class AccionEliminar implements Accion{
 
         boolean eliminado = false;
         for (Juguete juguete : juguetes) {
-            if (juguete.getid() == eliminar) {
+            if (juguete.getid() == eliminar - 1) {
                 juguetes.remove(juguete);
                 System.out.println("Objeto eliminado con éxito.");
                 eliminado = true;
@@ -42,7 +42,7 @@ public class AccionEliminar implements Accion{
             juguetes.get(i).setid(i);
 
         }
-        Collections.sort(juguetes,(uno, dos) -> Integer.compare(Math.toIntExact(uno.getid()), Math.toIntExact(dos.getid())));
+
 
     }
 

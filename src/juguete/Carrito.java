@@ -16,21 +16,19 @@ public class Carrito implements Juguete {
         this.id = id;
     }
 
-    public Carrito(Carrito carrito) {
+    public Carrito(Carrito carrito, int id) {
         this.color = carrito.color;
         this.marca = carrito.marca;
         this.numeroPuertas = carrito.numeroPuertas;
-        this.id = carrito.id;
+        this.id = id;
     }
 
-    public Carrito clone(){
-        return new Carrito(this);
-    }
+
 
     @Override
     public String toString() {
         return "Carrito{" +
-                "| ID=" + id +
+                "| ID=" + (id+1) +
                 "| MARCA='" + marca + '\'' +
                 "| COLOR='" + color + '\'' +
                 "| NUMERO PUERTAS=" + numeroPuertas +
@@ -58,6 +56,11 @@ public class Carrito implements Juguete {
     @Override
     public void setid(int i) {
         this.id = i;
+    }
+
+    @Override
+    public Juguete clone(int id) {
+        return new Carrito(this,id);
     }
 
 

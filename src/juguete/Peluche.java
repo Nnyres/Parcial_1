@@ -15,21 +15,19 @@ public class Peluche implements Juguete {
 
     }
 
-    public Peluche(Peluche peluche) {
-        this.id = peluche.id;
+    public Peluche(Peluche peluche, int id) {
+        this.id = id;
         this.materialExterior = peluche.materialExterior;
         this.relleno = peluche.relleno;
         this.color = peluche.color;
 
     }
-    public Peluche clone() {
-        return new Peluche(this);
-    }
+
 
     @Override
     public String toString() {
         return "PELUCHE{" +
-                "| ID=" + id +
+                "| ID=" + (id+1) +
                 "| MATERIAL EXTERIOR='" + materialExterior + '\'' +
                 "| RELLENO='" + relleno + '\'' +
                 "| COLOR='" + color + '\'' +
@@ -56,6 +54,10 @@ public class Peluche implements Juguete {
         this.id = i;
     }
 
+    @Override
+    public Juguete clone(int id) {
+        return new Peluche(this,id);
+    }
 
 
     public static class PelucheBuilder {

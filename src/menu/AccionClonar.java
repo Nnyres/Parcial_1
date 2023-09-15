@@ -14,26 +14,22 @@ public class AccionClonar implements Accion{
     private static Scanner scanner = new Scanner(System.in);
     @Override
     public void aplicar() {
+
+        Juguete juguete;
         System.out.println("Ingrese el Id de Juguete que desea Clonar: ");
         int clonar= scanner.nextInt();
 
         boolean eliminado = false;
-        for (Juguete juguete : juguetes) {
-            if (juguete.getid() == clonar) {
-                Peluche clonPeluche = (Peluche) juguete;
-                Peluche clonPeluche2 = clonPeluche.clone();
-                juguetes.add(clonPeluche2);
-                System.out.println(clonPeluche2);
+        for (Juguete juguete1: juguetes) {
+            if (juguete1.getid() == clonar) {
+                Juguete jugueteClon = juguete1.clone(juguetes.size());
+                juguetes.add(jugueteClon);
                 eliminado = true;
                 break;
             }
         }
 
-        for (int i = 0; i < juguetes.size(); i++) {
-            juguetes.get(i).setid(i);
 
-        }
-        Collections.sort(juguetes,(uno, dos) -> Integer.compare(Math.toIntExact(uno.getid()), Math.toIntExact(dos.getid())));
     }
 
     @Override
