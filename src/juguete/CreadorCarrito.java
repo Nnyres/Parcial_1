@@ -16,7 +16,7 @@ public class CreadorCarrito implements CreadorJuguete {
         try {
             Scanner scanner = new Scanner(System.in);
             System.out.println("");
-            System.out.println(" <<< Estas Creando un Peluche >>> ");
+            System.out.println(" <<< Estas Creando un Carrito >>> ");
             Long id = Long.valueOf(juguetes.size());
             System.out.println(">Ingrese la marca del carrito");
             String marca = scanner.nextLine();
