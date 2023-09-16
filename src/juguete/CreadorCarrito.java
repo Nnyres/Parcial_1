@@ -16,6 +16,7 @@ public class CreadorCarrito implements CreadorJuguete {
         try {
             Scanner scanner = new Scanner(System.in);
             System.out.println("");
+            System.out.println(" <<< Estas Creando un Peluche >>> ");
             Long id = Long.valueOf(juguetes.size());
             System.out.println(">Ingrese la marca del carrito");
             String marca = scanner.nextLine();
@@ -34,14 +35,18 @@ public class CreadorCarrito implements CreadorJuguete {
                     .build();
 
             juguetes.add(carrito);
+
+            System.out.println("---------------------------------------------------------");
+            System.out.println("                    CARRITO CREADO                       ");
             System.out.println(carrito);
+            System.out.println("---------------------------------------------------------");
             return carrito;
 
         } catch (Exception e) {
             System.out.println("""
-                    ---------------------
-                    X La cantidad de puertas debe ser un numero X
-                    ---------------------
+                    ----------------------------------------------------------------
+                            X> La cantidad de puertas debe ser un numero <X
+                    ----------------------------------------------------------------
                     """);
         }
 

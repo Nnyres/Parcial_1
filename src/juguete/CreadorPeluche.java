@@ -9,9 +9,10 @@ public class CreadorPeluche implements CreadorJuguete{
     @Override
     public Juguete crear() {
         Scanner scanner = new Scanner(System.in);
+        System.out.println(" <<< Estas Creando un Peluche >>> ");
         System.out.println("Ingrese un color");
         String color=scanner.nextLine();
-        System.out.println("Ingrese un Material Exterior");
+        System.out.println("Ingrese el Material Exterior");
         String materialExtxterior= scanner.nextLine();
         System.out.println("Ingrese Relleno");
         String  relleno= scanner.nextLine();
@@ -26,8 +27,13 @@ public class CreadorPeluche implements CreadorJuguete{
                 .id(id)
                 .build();
 
+
         juguetes.add(peluche);
+        System.out.println("---------------------------------------------------------");
+        System.out.println("                    PELUCHE CREADO                       ");
         System.out.println(peluche);
+        System.out.println("---------------------------------------------------------");
+
 
 
         return peluche;

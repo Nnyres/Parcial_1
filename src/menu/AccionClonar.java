@@ -64,9 +64,9 @@ public class AccionClonar implements Accion{
 
         }catch (Exception e){
             System.out.println("""
-                 -------------------------------------
-                         X Opción no valida X
-                 -------------------------------------
+                 ----------------------------------------------
+                             X Opción no valida X
+                 ----------------------------------------------
                  >Por favor seleccione un Juguete de la lista<
                  """);
         }
