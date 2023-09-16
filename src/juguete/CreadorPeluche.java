@@ -5,9 +5,10 @@ import java.util.Scanner;
 import static src.menu.Menu.juguetes;
 public class CreadorPeluche implements CreadorJuguete{
 
-    public static Scanner scanner = new Scanner(System.in);
+
     @Override
     public Juguete crear() {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Ingrese un color");
         String color=scanner.nextLine();
         System.out.println("Ingrese un Material Exterior");
@@ -15,6 +16,7 @@ public class CreadorPeluche implements CreadorJuguete{
         System.out.println("Ingrese Relleno");
         String  relleno= scanner.nextLine();
         Long id= Long.valueOf(juguetes.size());
+
 
 
         Peluche peluche = new Peluche.PelucheBuilder()

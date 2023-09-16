@@ -26,12 +26,12 @@ public class Peluche implements Juguete {
 
     @Override
     public String toString() {
-        return "PELUCHE{" +
+        return "PELUCHE:" +
                 "| ID=" + (id+1) +
                 "| MATERIAL EXTERIOR='" + materialExterior + '\'' +
                 "| RELLENO='" + relleno + '\'' +
                 "| COLOR='" + color + '\'' +
-                '}';
+                '|';
     }
 
     public static PelucheBuilder builder(){

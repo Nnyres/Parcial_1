@@ -29,14 +29,14 @@ public class AccionCrear implements Accion{
                 creadorCarrito.crear();
 
             } else {
-                System.out.println("Opción no valida");
+                System.out.println("*Por favor seleccione una opción del menú*");
             }
         } catch (Exception e) {
             System.out.println("""
                  ---------------------
-                 X Opción no valida X
+                 X>Opción no valida<X
                  ---------------------
-                 Por favor seleccione una opción del menú
+                 *Por favor seleccione una opción del menú*
                  """);
 
         }

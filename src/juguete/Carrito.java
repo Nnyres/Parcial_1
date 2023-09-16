@@ -9,11 +9,12 @@ public class Carrito implements Juguete {
     private int numeroPuertas;
 
 
-    public Carrito(String color, String marca, int numeroPuertas, long id) {
-        this.color = color;
+    public Carrito(long id, String marca, String color, int numeroPuertas) {
+        this.id = id;
         this.marca = marca;
         this.numeroPuertas = numeroPuertas;
-        this.id = id;
+        this.color = color;
+
     }
 
     public Carrito(Carrito carrito, int id) {
@@ -27,12 +28,12 @@ public class Carrito implements Juguete {
 
     @Override
     public String toString() {
-        return "Carrito{" +
+        return "CARRITO:" +
                 "| ID=" + (id+1) +
                 "| MARCA='" + marca + '\'' +
                 "| COLOR='" + color + '\'' +
                 "| NUMERO PUERTAS=" + numeroPuertas +
-                '}';
+                '|';
     }
 
     public static CarritoBuilder builder() {
@@ -66,34 +67,31 @@ public class Carrito implements Juguete {
 
 
     public static class CarritoBuilder {
-        private String color;
-        private String marca;
-        private int numeroPuertas;
         private long id;
-
-        public CarritoBuilder color(String color) {
-            this.color = color;
-            return this;
-        }
-
-        public CarritoBuilder marca(String marca) {
-            this.marca = marca;
-            return this;
-        }
-
-        public CarritoBuilder numeroPuertas(int numeroPuertas) {
-            this.numeroPuertas = numeroPuertas;
-            return this;
-        }
+        private String marca;
+        private String color;
+        private int numeroPuertas;
 
         public CarritoBuilder id(long id) {
             this.id = id;
             return this;
         }
+        public CarritoBuilder marca(String marca) {
+            this.marca = marca;
+            return this;
+        }
+        public CarritoBuilder color(String color) {
+            this.color = color;
+            return this;
+        }
+        public CarritoBuilder numeroPuertas(int numeroPuertas) {
+            this.numeroPuertas = numeroPuertas;
+            return this;
+        }
 
         public Carrito build() {
 
-            return new Carrito(color, marca, numeroPuertas, id);
+            return new Carrito(id, marca, color, numeroPuertas);
         }
 
     }
