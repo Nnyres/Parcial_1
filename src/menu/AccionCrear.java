@@ -4,6 +4,9 @@ import src.juguete.*;
 import src.menu.Menu;
 
 import java.util.Scanner;
+
+import static src.menu.Menu.juguetes;
+
 public class AccionCrear implements Accion{
     private static Scanner scanner = new Scanner(System.in);
 
@@ -23,10 +26,10 @@ public class AccionCrear implements Accion{
         try {
             op = Integer.parseInt(scanner.nextLine());
             if (op == 1){
-                creadorPeluche.crear();
+                juguetes.add(creadorPeluche.crear());
 
             } else if (op == 2) {
-                creadorCarrito.crear();
+                juguetes.add(creadorCarrito.crear());
 
             } else {
                 System.out.println("*Por favor seleccione una opción del menú*");

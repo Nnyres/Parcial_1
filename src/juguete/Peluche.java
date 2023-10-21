@@ -34,20 +34,12 @@ public class Peluche implements Juguete {
                 '|';
     }
 
-    public static PelucheBuilder builder(){
-
-        return new PelucheBuilder();
-    }
 
     @Override
     public Long getid() {
         return id;
     }
 
-    @Override
-    public String getcorlor() {
-        return color;
-    }
 
     @Override
     public void setid(int i) {

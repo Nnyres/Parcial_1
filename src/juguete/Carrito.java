@@ -36,23 +36,12 @@ public class Carrito implements Juguete {
                 '|';
     }
 
-    public static CarritoBuilder builder() {
-
-        return new CarritoBuilder();
-    }
-
-
     @Override
     public Long getid() {
 
         return id;
     }
 
-    @Override
-    public String getcorlor() {
-
-        return color;
-    }
 
     @Override
     public void setid(int i) {

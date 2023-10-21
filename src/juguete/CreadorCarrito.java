@@ -33,13 +33,11 @@ public class CreadorCarrito implements CreadorJuguete {
                     .marca(marca)
                     .id(id)
                     .build();
-
-            juguetes.add(carrito);
-
             System.out.println("---------------------------------------------------------");
             System.out.println("                    CARRITO CREADO                       ");
             System.out.println(carrito);
             System.out.println("---------------------------------------------------------");
+
             return carrito;
 
         } catch (Exception e) {

@@ -17,7 +17,6 @@ public class AccionEliminar implements Accion{
 
      Menu men = new Menu();
 
-
     @Override
     public void aplicar() {
 
@@ -53,10 +52,11 @@ public class AccionEliminar implements Accion{
                 System.out.println("---------------------------------------------------------");
             }
 
-            for (int i = 0; i < juguetes.size(); i++) {
-                juguetes.get(i).setid(i);
-
+            int i=0;
+            for(Juguete juguete: juguetes){
+                juguete.setid(i++);
             }
+
         }catch (Exception e) {
             System.out.println("""
                  ---------------------------------------------------------

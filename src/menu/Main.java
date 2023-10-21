@@ -28,6 +28,7 @@ public class Main {
                 2. Clonar
                 3. Eliminar
                 4. Registrar
+                5. Imprimir Juguetes
                 0. Salir
                 
                 Seleccione una opción: 
