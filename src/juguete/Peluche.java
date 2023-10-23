@@ -40,10 +40,16 @@ public class Peluche implements Juguete {
         return id;
     }
 
+    @Override
+    public Integer getnumeroPuertas() {
+        return null;
+    }
+
 
     @Override
-    public void setid(int i) {
+    public Juguete setid(int i) {
         this.id = i;
+        return null;
     }
 
     @Override

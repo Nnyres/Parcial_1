@@ -42,10 +42,16 @@ public class Carrito implements Juguete {
         return id;
     }
 
+    @Override
+    public Integer getnumeroPuertas() {
+        return numeroPuertas;
+    }
+
 
     @Override
-    public void setid(int i) {
+    public Juguete setid(int i) {
         this.id = i;
+        return null;
     }
 
     @Override

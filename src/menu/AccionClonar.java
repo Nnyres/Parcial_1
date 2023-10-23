@@ -38,13 +38,13 @@ public class AccionClonar implements Accion{
         int nClonar= scanner.nextInt();
         System.out.println("---------------------------------------------------------------");
 
-        boolean clon = false;
+        int clon = 1;
         for (int i = 0; i < (nClonar); i++) {
             for (Juguete juguete1: juguetes) {
                 if (juguete1.getid() == clonar-1) {
                     Juguete jugueteClon = juguete1.clone(juguetes.size());
                     juguetes.add(jugueteClon);
-                    clon = true;
+                    clon = 2;
                     break;
                 }
 
@@ -56,7 +56,7 @@ public class AccionClonar implements Accion{
             System.out.println("---------------------------------------------------------------");
 
 
-        if (!clon) {
+        if (clon != 2) {
             System.out.println("---------------------------------------------------------------");
             System.out.println("El Juguete selccionado no existe");
             System.out.println("---------------------------------------------------------------");

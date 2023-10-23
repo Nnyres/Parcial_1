@@ -7,7 +7,14 @@ import java.util.Map;
 
 public class AccionHandler{
 
-    private static final List<Accion> ListaDeAcciones = List.of(new AccionImprimir(), new AccionCrear(), new AccionClonar(),new AccionEliminar(), new AccionRegistro());
+    private static final List<Accion> ListaDeAcciones = List.of(new AccionCrear(),
+            new AccionClonar(),
+            new AccionEliminar(),
+            new AccionRegistro(),
+            new AccionImprimir(),
+            new AccionCarritoMayorPuerta(),
+            new AccionSetaMap(),
+            new AccionEliminarPorColor());
 
     public static Map<Integer, Accion> getStrategy() {
         Map<Integer, Accion> strategy = new HashMap<>();

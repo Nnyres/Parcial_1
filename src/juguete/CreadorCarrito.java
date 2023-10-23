@@ -13,6 +13,7 @@ public class CreadorCarrito implements CreadorJuguete {
     public Juguete crear() {
 
 
+
         try {
             Scanner scanner = new Scanner(System.in);
             System.out.println("");
@@ -23,7 +24,7 @@ public class CreadorCarrito implements CreadorJuguete {
             System.out.println(">Ingrese el color del carrito");
             String color = scanner.nextLine();
             System.out.println("Ingrese la cantidad de puertas del carrito");
-            int numeroPuertas = scanner.nextInt();
+            Integer numeroPuertas = scanner.nextInt();
 
 
             Carrito carrito = new Carrito.CarritoBuilder()

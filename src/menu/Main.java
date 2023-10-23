@@ -29,6 +29,9 @@ public class Main {
                 3. Eliminar
                 4. Registrar
                 5. Imprimir Juguetes
+                6. Carrito con mayor puertas
+                7. Convertir de Set a Map
+                8. Eliminar por Color
                 0. Salir
                 
                 Seleccione una opción: 
