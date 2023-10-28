@@ -24,7 +24,7 @@ public class AccionClonar implements Accion{
             return;
         }
         try {
-        Juguete juguete;
+
 
         System.out.println("---------------------------------------------------------------");
         System.out.println(">Por favor Seleccione de la lista el Juguete que desea Clonar: ");
@@ -40,9 +40,9 @@ public class AccionClonar implements Accion{
 
         int clon = 1;
         for (int i = 0; i < (nClonar); i++) {
-            for (Juguete juguete1: juguetes) {
-                if (juguete1.getid() == clonar-1) {
-                    Juguete jugueteClon = juguete1.clone(juguetes.size());
+            for (Juguete juguete: juguetes) {
+                if (juguete.getid() == clonar-1) {
+                    Juguete jugueteClon = juguete.clone(juguetes.size());
                     juguetes.add(jugueteClon);
                     clon = 2;
                     break;
@@ -55,12 +55,12 @@ public class AccionClonar implements Accion{
             System.out.println("Clonación Exitosa");
             System.out.println("---------------------------------------------------------------");
 
+        if (clon == 1) {
+        System.out.println("---------------------------------------------------------------");
+        System.out.println("El Juguete selccionado no existe");
+        System.out.println("---------------------------------------------------------------");
+        }
 
-        if (clon != 2) {
-            System.out.println("---------------------------------------------------------------");
-            System.out.println("El Juguete selccionado no existe");
-            System.out.println("---------------------------------------------------------------");
-            }
 
         }catch (Exception e){
             System.out.println("""

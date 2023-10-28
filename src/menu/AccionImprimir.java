@@ -26,36 +26,44 @@ public class AccionImprimir implements Accion{
             return;
         }
         listaJuguetes.aplicar();
-        System.out.println("---------------------------------------------------------------");
-        System.out.println("""
-            -------------------------
-            ¿Que Juguetes desea imprimir?
-                1. Carritos
-                2. Peluches
-            ------------------------- 
-            """);
-        System.out.println("---------------------------------------------------------------");
-
-        List<Juguete> jugueteFiltrado = new ArrayList<>(juguetes);
-
-        int imprimir= scanner.nextInt();
-        if (imprimir == 1){
-            System.out.println("> Los Carritos de la Jugueteria son: ");
-            jugueteFiltrado.stream()
-                    .filter(jugueteF -> jugueteF instanceof Carrito)
-                    .sorted(Comparator.comparing(jugueteF -> jugueteF.getid(), Comparator.reverseOrder()))
-                    .forEach(System.out::println);
+        try {
             System.out.println("---------------------------------------------------------------");
-        }
-        else if (imprimir == 2) {
-            System.out.println("> Los Peluches de la Jugueteria son: ");
-            jugueteFiltrado.stream()
-                    .filter(jugueteF -> jugueteF instanceof Peluche)
-                    .sorted(Comparator.comparing(jugueteF -> jugueteF.getid(), Comparator.reverseOrder()))
-                    .forEach(System.out::println);
+            System.out.println("""
+                    -------------------------
+                    ¿Que Juguetes desea imprimir?
+                        1. Carritos
+                        2. Peluches
+                    ------------------------- 
+                    """);
             System.out.println("---------------------------------------------------------------");
-        } else {
-            System.out.println("*Por favor seleccione un juguete existente*");
+
+            List<Juguete> jugueteFiltrado = new ArrayList<>(juguetes);
+
+            int imprimir = scanner.nextInt();
+            if (imprimir == 1) {
+                System.out.println("> Los Carritos de la Jugueteria son: ");
+                jugueteFiltrado.stream()
+                        .filter(jugueteF -> jugueteF instanceof Carrito)
+                        .sorted(Comparator.comparing(jugueteF -> jugueteF.getid(), Comparator.reverseOrder()))
+                        .forEach(System.out::println);
+                System.out.println("---------------------------------------------------------------");
+            } else if (imprimir == 2) {
+                System.out.println("> Los Peluches de la Jugueteria son: ");
+                jugueteFiltrado.stream()
+                        .filter(jugueteF -> jugueteF instanceof Peluche)
+                        .sorted(Comparator.comparing(jugueteF -> jugueteF.getid(), Comparator.reverseOrder()))
+                        .forEach(System.out::println);
+                System.out.println("---------------------------------------------------------------");
+            } else {
+                System.out.println("*Por favor seleccione un juguete existente*");
+            }
+        }catch (Exception e){
+            System.out.println("""
+                 ----------------------------------------------
+                             X Opción no valida X
+                 ----------------------------------------------
+                 >Por favor seleccione un Juguete de la lista<
+                 """);
         }
 
     }
