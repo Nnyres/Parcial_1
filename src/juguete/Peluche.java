@@ -41,6 +41,11 @@ public class Peluche implements Juguete {
     }
 
     @Override
+    public String getcolor() {
+        return color;
+    }
+
+    @Override
     public Integer getnumeroPuertas() {
         return null;
     }
